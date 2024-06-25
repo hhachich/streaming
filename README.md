@@ -75,3 +75,6 @@ https://www.themoviedb.org/
 
 # Icon de navigation 
 https://heroicons.com/ 
+
+# resource
+https://www.youtube.com/watch?v=DnPA63Ghh5s
