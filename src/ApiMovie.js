@@ -23,6 +23,11 @@ export default {
               items: await fetchMovies("movie/top_rated"),
             },
             {
+              slug: "tv-toprated",
+              title: "Série bien notées",
+              items: await fetchMovies("tv/top_rated"),
+            },
+            {
                 slug: "upcoming",
                 title: "Prochaines sorties",
                 items: await fetchMovies("movie/upcoming"),
@@ -33,6 +38,23 @@ export default {
                 items: await fetchMovies("tv/popular"),
             },
         ]
-    }   
+    },
+    getMovieInfo: async (movieId, type) => {
+      let info = []
+      if (movieId) {
+        switch (type) {
+          case "movie":
+            info = await fetchMovies(`movie/${movieId}`)
+            break
+          case "tv":
+            info = await fetchMovies(`tv/${movieId}`)
+            break
+  
+          default:
+            break
+        }
+      }
+      return info
+    },   
 }
 
