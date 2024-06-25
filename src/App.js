@@ -1,6 +1,7 @@
 import { useEffect,useState  } from 'react';
 import ApiMovie from './ApiMovie';
 import './App.css';
+import MovieSection from './components/MovieSection';
 
 function App() {
   const [moviesList, setMoviesList] = useState([])
@@ -17,10 +18,10 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <div className="page">
       <section className="lists">
         {moviesList.map((item, key) => (
-          <p key={key}  >{item.title}</p>
+          <MovieSection key={key} title={item.title} items={item.items}/>
         ))}
       </section>        
     </div>
