@@ -19,7 +19,7 @@ export default {
         return [
             {
               slug: "top-rated",
-              title: "Mieux notés",
+              title: "Film mieux notés",
               items: await fetchMovies("movie/top_rated"),
             },
             {
