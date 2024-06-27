@@ -1,6 +1,7 @@
 import React from "react"
 import logo from "../asset/logo.png"
 import "./Header.css"
+import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
@@ -13,6 +14,7 @@ function Header() {
           />
         </a>
       </div>
+      
       <div className="header--user">
         <a href="/">
           <img
@@ -22,6 +24,8 @@ function Header() {
         </a>
       </div>
     </header>
+
+    
     
   )
 }

@@ -110,3 +110,34 @@
     }
     
 }
+
+/* datails section */
+.info__overlay {
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 99;
+    overflow: scroll;
+}
+
+.info__overlay--contentBox {
+    position: absolute;
+    top: 8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85rem;
+    height: auto;
+    min-height: 50rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: #111;
+}
+.info__overlay--videoBox {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}

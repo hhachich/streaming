@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./MovieSection.css";
-// import ApiMovie from "../ApiMovie";
 import YouTube from 'react-youtube';
 import ApiMovie from "../ApiMovie";
 
@@ -41,9 +40,9 @@ const MovieSection = ({ title, items, typeVideo }) => {
   const [titleMovie, setTitleMovie] = useState('');
   const [originalTitleMovie, setOriginalTitleMovie] = useState('');
 
-  const handleClick2 = async (movie) => {
+  const handleClickDetails = async (movie) => {
 
-    console.log("handleClick2");
+    console.log("handleClickDetails");
     if (trailerURL) {
       console.log("trailerURL true")
       setTrailerURL('');
@@ -82,14 +81,14 @@ const MovieSection = ({ title, items, typeVideo }) => {
               <img
                 alt={item.original_title}
                 src={`https://image.tmdb.org/t/p/w300/${item.poster_path}`}
-                onClick={() => handleClick2(item)}
+                onClick={() => handleClickDetails(item)}
               />
               {/*  */}
             </div>
           ))}
 
       </Carousel>
-      {trailerURL && <div className="info__overlay" onClick={() => handleClick2(null)}>
+      {trailerURL && <div className="info__overlay" onClick={() => handleClickDetails(null)}>
         <div className="info__overlay--contentBox" onClick={(e) => e.stopPropagation()}>
 
           <div className="info__overlay--videoBox">
