@@ -12,6 +12,10 @@ body {
 h2 {
     margin: 0px 0px 0px 30px;
 }
+.center {
+    display: flex; 
+    justify-content: center 
+}
 
 .slider {
     margin: 0 20px;
@@ -44,3 +48,55 @@ h2 {
 .react-multi-carousel-dot.react-multi-carousel-dot--active button {
     background: rgb(255, 68, 68) !important;
 }
+
+
+/* test */
+.info__overlay {
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 99;
+    overflow: scroll;
+}
+
+.info__overlay--contentBox {
+    position: absolute;
+    top: 8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85rem;
+    height: auto;
+    min-height: 50rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: #111;
+}
+.info__overlay--videoBox {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.info__overlay--text {
+    padding: 2rem 4rem 4rem;
+}
+
+.info__overlay--text h1 {
+    font-size: 4rem;
+}
+
+.info__overlay--text h2 {
+    font-size: 2.4rem;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    font-style: italic;
+}
+
+/* .info__overlay--text p {
+    line-height: 1.6;
+    font-size: 1.6rem;
+} */

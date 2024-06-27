@@ -81,8 +81,8 @@ https://www.youtube.com/watch?v=DnPA63Ghh5s
 
 
 # ToDo
-- [ ] carousel de la page d'accueil
+- [ * ] carousel de la page d'accueil
 - [ ] NavBar list categorie 
-- [ ] page détaille
+- [ ] page movie-trailer de youtube
 - [ ] login activation de ma list avec connection a une base de données
 
