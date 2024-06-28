@@ -35,6 +35,12 @@ const opts = {
 };
 
 const MovieSection = ({ title, items, typeVideo }) => {
+  console.log("MovieSection ")
+  console.log("title " , title)
+  console.log("items " , items)
+  console.log("typeVideo " , typeVideo)
+
+
   const [trailerURL, setTrailerURL] = useState("");
   const [descriptionMovie, setDescriptionMovie] = useState('');
   const [titleMovie, setTitleMovie] = useState('');
@@ -52,12 +58,12 @@ const MovieSection = ({ title, items, typeVideo }) => {
     } else {
     console.log("movie", movie);
 
-    let list = await ApiMovie.getTrailer(movie.id, typeVideo);
-    console.log("list", list[0].key);
-    const path = list[0].key;
+    let listTrailer = await ApiMovie.getTrailer(movie.id, typeVideo);
+    const path = listTrailer[0].key;
     setDescriptionMovie(movie.overview);
     setTitleMovie(movie.name || movie.title);
     setOriginalTitleMovie(movie.original_name || movie.original_title);
+    console.log("path " , path)
     setTrailerURL(path);
     }
   }
@@ -75,7 +81,7 @@ const MovieSection = ({ title, items, typeVideo }) => {
         partialVisible={false}
         dotListClass="custom-dot-list-style"
       >
-        {items.results.length > 0 &&
+        {items.results &&
           items.results.map((item, key) => (
             <div className="slider" key={key}>
               <img
@@ -83,7 +89,6 @@ const MovieSection = ({ title, items, typeVideo }) => {
                 src={`https://image.tmdb.org/t/p/w300/${item.poster_path}`}
                 onClick={() => handleClickDetails(item)}
               />
-              {/*  */}
             </div>
           ))}
 

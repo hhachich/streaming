@@ -80,9 +80,4 @@ https://heroicons.com/
 https://www.youtube.com/watch?v=DnPA63Ghh5s
 
 
-# ToDo
-- [ * ] carousel de la page d'accueil
-- [ ] NavBar list categorie 
-- [ ] page movie-trailer de youtube
-- [ ] login activation de ma list avec connection a une base de données
 

@@ -1,0 +1,16 @@
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );;
+  /* padding: 30px; */
+  padding: 2rem 0;
+  padding-left: 30px;
+}
+img {
+  
+  border-radius: 10px;
+  transform: scale(0.9);
+}
+
+ img:hover {
+  transform: scale(1);
+}

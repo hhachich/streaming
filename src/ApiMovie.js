@@ -23,6 +23,17 @@ const fetchMovies = async (endpoint) => {
       
     ).then((response) => response.json())
   }
+  const fetchSearch = async (endpoint) => {
+    return await fetch(
+      `${API_URL}${endpoint}`, {
+        method: "GET",
+        headers: {
+          "Authorization": `Bearer ${API_KEY}`,
+        },
+      }
+      
+    ).then((response) => response.json())
+  }
 
 export default {
     getHomeMovies: async () => {
@@ -87,6 +98,61 @@ export default {
       }
       let trailersVideo=info.results.filter((trailers) => trailers.type === "Trailer");
       return trailersVideo
-    },      
+    },
+    getRecommendations: async (movieId,type) => {
+      let info = []   
+      if (movieId) {
+        switch (type) {
+          case "movie":
+            info = await fetchTrailer(`movie/${movieId}/recommendations`)
+            break
+          case "tv":
+            info = await fetchTrailer(`tv/${movieId}/recommendations`)
+            break
+  
+          default:
+            break
+        }
+      }
+      return info
+    },       
+    geSimilar: async (movieId,type) => {
+      let info = []   
+      if (movieId) {
+        switch (type) {
+          case "movie":
+            info = await fetchTrailer(`movie/${movieId}/similar`)
+            break
+          case "tv":
+            info = await fetchTrailer(`tv/${movieId}/similar`)
+            break
+  
+          default:
+            break
+        }
+      }
+      return info
+    },
+    getSearch: async (keyWord,type) => {
+      let info = []   
+      console.log("getSearch")
+
+      if (keyWord) {
+        switch (type) {
+          case "movie":
+            console.log("getSearch movie")
+            info = await fetchSearch(`search/movie?query=${keyWord}`)
+            console.log("info",info)
+            break
+          case "tv":
+            info = await fetchSearch(`search/tv?query=${keyWord}`)
+            break
+  
+          default:
+            break
+        }
+      }
+      return info
+    },           
 }
 

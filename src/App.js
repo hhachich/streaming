@@ -4,6 +4,7 @@ import './App.css';
 import MovieSection from './components/MovieSection';
 import FeaturedMovie from './components/FeaturedMovie';
 import Header from './components/Header';
+import MovieSearch from './components/MovieSearch';
 
 function App() {
   const [moviesList, setMoviesList] = useState([])
@@ -36,6 +37,7 @@ function App() {
 
       <Header />
        {featuredData && <FeaturedMovie films={featuredData} />}
+       <MovieSearch/>
       <section className="lists">
         {moviesList.map((item, key) => (
           <MovieSection key={key} title={item.title} items={item.items} typeVideo={item.typeVideo}/>
