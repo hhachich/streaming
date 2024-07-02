@@ -37,7 +37,7 @@ const MovieSearch = () => {
                 {listMovie.results && <div>
                     <MovieGrid title="search section" items={listMovie} typeVideo="movies" />
                 </div>
-                }                
+                }
             </section>
 
         </div>
