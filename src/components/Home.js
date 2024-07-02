@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import FeaturedMovie from './FeaturedMovie';
 import MovieSection from './MovieSection';
 import MovieSearch from './MovieSearch';
-import Header from './Header';
+import './Home.css';
 import ApiMovie from '../ApiMovie';
-import { Outlet } from 'react-router-dom';
+import Navigation from './Navigation';
 
 const Home = () => {
     const [moviesList, setMoviesList] = useState([])
@@ -34,7 +34,8 @@ const Home = () => {
         <div className="page">
 
 
-            <Header />
+            {/* <Header /> */}
+            <Navigation />
             {featuredData && <FeaturedMovie films={featuredData} />}
             <MovieSearch />
             <section className="lists">

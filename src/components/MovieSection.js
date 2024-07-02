@@ -36,9 +36,9 @@ const opts = {
 
 const MovieSection = ({ title, items, typeVideo }) => {
   console.log("MovieSection ")
-  console.log("title " , title)
-  console.log("items " , items)
-  console.log("typeVideo " , typeVideo)
+  console.log("title ", title)
+  console.log("items ", items)
+  console.log("typeVideo ", typeVideo)
 
 
   const [trailerURL, setTrailerURL] = useState("");
@@ -56,19 +56,19 @@ const MovieSection = ({ title, items, typeVideo }) => {
       setTitleMovie('');
       setOriginalTitleMovie('');
     } else {
-    console.log("movie", movie);
+      console.log("movie", movie);
 
-    let listTrailer = await ApiMovie.getTrailer(movie.id, typeVideo);
-    const path = listTrailer[0].key;
-    setDescriptionMovie(movie.overview);
-    setTitleMovie(movie.name || movie.title);
-    setOriginalTitleMovie(movie.original_name || movie.original_title);
-    console.log("path " , path)
-    setTrailerURL(path);
+      let listTrailer = await ApiMovie.getTrailer(movie.id, typeVideo);
+      const path = listTrailer[0].key;
+      setDescriptionMovie(movie.overview);
+      setTitleMovie(movie.name || movie.title);
+      setOriginalTitleMovie(movie.original_name || movie.original_title);
+      console.log("path ", path)
+      setTrailerURL(path);
     }
   }
   return (
-    <div className="parent">
+    <div className="body">
       <h2>{title}</h2>
 
       <Carousel
