@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./MovieSearch.css"
 import ApiMovie from '../ApiMovie';
 import MovieGrid from './MovieGrid';
+import Categorie from './Categorie';
 const MovieSearch = () => {
 
     const [keyword, setKeyword] = useState("");
@@ -27,6 +28,7 @@ const MovieSearch = () => {
 
     return (
         <div className="movie-search">
+            <Categorie />
             <input
                 type="text"
                 placeholder="Enter keyword"
